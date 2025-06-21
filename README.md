@@ -29,7 +29,7 @@ TotalRecon is an ambitious, ultra-comprehensive utility designed to extract, ana
 - **Battery**: Health, design vs current capacity, cycle count
 - **Peripherals**: USB devices, scanners, printers
 
-### 🪟 Operating System Insights
+### 📱 Operating System Insights
 - OS version, edition, build number, install date
 - Installed and pending **Windows Updates**
 - System uptime and boot time
