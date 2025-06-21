@@ -313,7 +313,7 @@ TotalRecon doesn’t just collect data — it presents it in a highly organized,
 
 All output data will be saved under a user-defined or default `/output` directory:
 
-
+```plaintext
 /output/  
 ├── system/  
 │ ├── cpu.json  
@@ -342,7 +342,7 @@ All output data will be saved under a user-defined or default `/output` director
 │ ├── shellbags.json  
 │ └── jump_lists.json  
 └── summary_report.json  
-
+```
 
 ---
 
@@ -502,3 +502,226 @@ totalrecon.exe --help
 ---
 
 > ⚡ Whether you're running deep diagnostics, monitoring performance, or performing forensic audits — TotalRecon adapts to your permission level, workflow, and preferences.
+
+## 🛣️ Part 6 - Roadmap, Feature Planning & Contribution Guidelines
+
+TotalRecon is a living project built for continuous improvement, modular expansion, and community contribution. Below is the planned development roadmap, major feature goals, and guidelines for contributors who want to help push the project forward.
+
+---
+
+### 🗓️ Development Roadmap
+
+| Version | Status       | Milestones                                                         |
+|---------|--------------|---------------------------------------------------------------------|
+| `v0.1`  | 🚧 In Progress | Core CLI engine, module loader, JSON export, config file support  |
+| `v0.2`  | 🕵️ Planned    | Security & forensic modules, log/event processing, privilege-aware scanning |
+| `v0.3`  | 📊 Planned    | HTML report generation, visual summaries, data filtering          |
+| `v0.4`  | 🖥️ Planned    | GUI frontend (Tkinter/WPF), cross-platform layout                 |
+| `v1.0`  | 🏁 Planned    | First stable release with all core modules, testing suite, installers |
+| `v1.x+` | 🚀 Future     | Plugin system, live monitoring, remote scan agent, enterprise features |
+
+---
+
+### 🧩 Planned Feature Highlights
+
+- ✅ Modular engine with dynamic loader (multi-language compatible)
+- ✅ Per-module privilege detection and fail-safe execution
+- ✅ Multi-format export system (JSON, HTML, PDF, SQLite, CSV)
+- ✅ YAML-based configuration profiles
+- 🔜 Secure archive packaging of reports
+- 🔜 Optional local-only REST API for dashboards
+- 🔜 Support for scheduled scans and delta reports
+- 🔜 Custom plugin/module SDK (Python-first, others later)
+- 🔜 Live system monitoring + alerts
+- 🔜 Remote scanning via authenticated sockets (LAN only)
+- 🔜 WSL2 and sandbox analysis
+- 🔜 Integration with Power BI / Splunk / SIEMs
+
+---
+
+### 🧑‍💻 Contribution Guidelines
+
+Contributions are highly welcome! Before submitting a pull request, please follow these general rules:
+
+#### 🛠️ Development Setup
+
+1. Fork the repository
+2. Clone your fork:  
+   `git clone https://github.com/your-username/TotalRecon.git`
+3. Create a branch:  
+   `git checkout -b feature/your-feature-name`
+4. Make your changes (code, docs, or testing)
+5. Commit using clear and conventional commit messages
+6. Push and open a pull request
+
+#### 📦 Structure Guidelines
+
+- New modules should go under `/modules/<language>/<category>/`
+- Exports should respect the `/output` and `/exporter` conventions
+- Keep all code platform-aware (check for Windows/Linux/macOS)
+- Use `logging` instead of `print()`
+- All modules must include metadata headers and error handling
+
+#### 📄 Documentation Standards
+
+- Document every module with:
+  - What it does
+  - Required privileges
+  - Sample output
+- All README updates should be clean and consistent
+- Diagrams must be SVG, PNG, or Markdown-friendly
+
+#### 🧪 Testing & Review
+
+- Submit test cases where applicable
+- Use dummy/mock data for sensitive tests
+- All code will be reviewed for:
+  - Security
+  - Performance
+  - Cross-platform behavior
+  - Clarity and modularity
+
+---
+
+### 📫 Want to Help?
+
+We’re looking for contributors in:
+
+- Python, Rust, C/C++, PowerShell, and C# devs
+- Forensics professionals to help define module accuracy
+- UI/UX designers for the GUI
+- Security researchers to vet outputs
+- Translators (future localization)
+- Documentation and testers
+
+> Join the mission to build the most complete local forensic & system analytics tool — by developers, for defenders.
+
+## 📜 Part 7 - Licensing, Security Policy & Acknowledgments
+
+---
+
+### 🔐 Security Policy
+
+We take the security of this project, its contributors, and its users **extremely seriously**.
+
+If you discover a vulnerability or a privacy concern:
+
+- 📧 Please report it **privately** to: `security@totalrecon.org` (placeholder)
+- Do **not** open GitHub issues for sensitive disclosures
+- We follow responsible disclosure practices and will respond within 72 hours
+
+**Security Measures Planned:**
+
+- Privilege boundary enforcement in every module
+- Read-only or dry-run modes for testing
+- Internal module sandboxing where possible
+- Logging of self-modifying or privileged actions
+
+---
+
+### 📄 License (Proposed)
+
+**TotalRecon** will be licensed under the [GNU AGPLv3](https://www.gnu.org/licenses/agpl-3.0.en.html) or [EUPL](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12) to ensure:
+
+- 🧩 All modifications must be open-sourced if redistributed
+- 🛑 Prevents use in closed-source commercial spyware or surveillance tools
+- 🤝 Ensures contributions benefit the whole community
+
+> Final license will be selected during `v1.0` release milestone based on contributor feedback.
+
+---
+
+### 🤝 Acknowledgments
+
+This project stands on the shoulders of many great tools and contributors. We’d like to recognize:
+
+#### 🔧 Tools & Projects Integrated
+- `wmic`, `systeminfo`, `netsh`, `reg`, `powershell`, `tasklist`, and other native Windows tools
+- `smartctl`, `lshw`, `dmidecode`, and `lsblk` for Linux-based data extraction
+- `scapy`, `psutil`, `pywin32`, `shutil`, `subprocess`, and other open-source Python libraries
+- Open hardware access libraries in Rust and C++
+- .NET Diagnostics & WMI-based tools for C# modules
+
+#### 🧠 Special Thanks
+- Community contributors for modules, bug fixes, and documentation
+- Forensics researchers and analysts providing guidance
+- Inspiration from Red Team / Blue Team and SOC forensic toolkits
+- GitHub and the open-source community for collaboration
+
+---
+
+> 💡 Want to see your name here? Contribute code, file a bug, write docs, or share feedback!
+
+# 🛰️ TotalRecon
+
+> The ultimate multi-language PC intelligence, forensic, and diagnostic toolkit.  
+> Full-system visibility. Cross-language power. Analyst-grade detail. All local. All yours.
+
+![Build](https://img.shields.io/badge/build-stable-blue.svg)
+![License](https://img.shields.io/badge/license-AGPLv3-green.svg)
+![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20%7C%20Linux%20(WIP)-purple.svg)
+![Languages](https://img.shields.io/badge/languages-Python%2C%20Rust%2C%20C%23%2C%20C%2FC%2B%2B%2C%20PowerShell-orange.svg)
+
+---
+
+### 🎯 What is TotalRecon?
+
+**TotalRecon** is a powerful, modular toolset designed to extract and analyze **every possible piece of information** from a target PC — from hardware specs and network activity to forensic traces, deleted file remnants, and behavioral profiling.
+
+Built using **Python**, **Rust**, **C**, **C++**, **C#**, and **PowerShell**, it leverages the best of each language to collect system intelligence far beyond standard diagnostics.
+
+No cloud. No telemetry. No hidden traffic.  
+Just **raw local analysis** with **military-grade detail**.
+
+---
+
+### 🚀 Key Capabilities
+
+- ✅ Full hardware scan (CPU, GPU, RAM, SSD/HDD, motherboard)
+- ✅ OS & software inventory, updates, environment variables
+- ✅ Registry, services, scheduled tasks, startup entries
+- ✅ Browser artifacts, clipboard history, download traces
+- ✅ Deleted data recovery, event logs, prefetch & jump lists
+- ✅ Credential Manager, biometric hashes, Windows Hello secrets
+- ✅ TPM, BitLocker, Secure Boot, kernel driver inspection
+- ✅ Network recon: open ports, DNS, ARP, saved WiFi with passwords
+- ✅ Forensic footprints, USB insertion logs, Office/Zoom/Teams usage
+- ✅ Export to JSON, CSV, PDF, HTML, SQLite, Markdown
+- ✅ Configurable, scriptable, and extensible
+
+---
+
+### 📚 Table of Contents
+
+1. [🔧 Project Architecture & Goals](#-part-1---project-architecture--goals)
+2. [🧠 Module System Overview](#-part-2---module-system-overview)
+3. [📦 Data Categories & Extraction Targets](#-part-3---data-categories--extraction-targets)
+4. [📤 Output Format, Reporting & Integration](#-part-4---output-format-reporting--integration-options)
+5. [⚙️ Execution Modes, Privilege Handling & Interface Design](#-part-5---execution-modes-privilege-handling--interface-design)
+6. [🛣️ Roadmap, Feature Planning & Contribution Guidelines](#-part-6---roadmap-feature-planning--contribution-guidelines)
+7. [📜 Licensing, Security Policy & Acknowledgments](#-part-7---licensing-security-policy--acknowledgments)
+
+---
+
+### 🧭 Project Diagram
+
+<p align="center">
+  <img src="docs/architecture_diagram.png" alt="TotalRecon Module Flow" width="700px">
+</p>
+
+> 🔧 You can replace this with the diagram you requested earlier.
+
+---
+
+### 🧪 Try It Locally (Coming Soon)
+
+> Instructions on building and running will be added in `v0.1` release. Until then, follow the roadmap for development progress.
+
+---
+
+### 🙌 Star this project if you believe in open, offline, forensic-grade system visibility.
+
+> ⚠️ This project is intended for ethical, educational, and administrative use only.  
+> Misuse for malicious purposes violates license terms and applicable laws.
+
+
